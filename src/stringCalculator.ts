@@ -21,3 +21,7 @@ export class StringCalculator {
     return numArray.reduce((sum, num) => sum + parseInt(num, 10), 0);
   }
 }
+
+const calculator = new StringCalculator();
+const result = calculator.add("1,2,3");
+console.log("Result:", result);
