@@ -12,6 +12,12 @@ export class StringCalculator {
     }
 
     const numArray = numbers.split(delimiter);
+    const negatives = numArray.filter((num) => parseInt(num, 10) < 0);
+
+    if (negatives.length > 0) {
+      throw new Error(`negative numbers not allowed: ${negatives.join(",")}`);
+    }
+
     return numArray.reduce((sum, num) => sum + parseInt(num, 10), 0);
   }
 }
